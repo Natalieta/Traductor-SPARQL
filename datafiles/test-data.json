@@ -1,0 +1,317 @@
+[
+  {
+    "_id": "13",
+    "corrected_question": "¿Cuál es el autor de ¡Huérfana!?",
+    "intermediary_question": "¿Cuál es el <autor> de <¡Huérfana!>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://novelas-populares.org/novela_1682509273> <http://novelas-populares.org/tieneAutor> ?uri }",
+    "sparql_template_id": "2"
+  },
+  {
+    "_id": "14",
+    "corrected_question": "¿En qué país nació Emilio Salgari?",
+    "intermediary_question": "¿Cuál es el <país de nacimiento> de <Emilio Salgari>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://novelas-populares.org/autor_emilio_salgari> <http://novelas-populares.org/paisDeNacimiento> ?uri }",
+    "sparql_template_id": "2"
+  },
+  {
+    "_id": "15",
+    "corrected_question": "¿Qué editorial publicó ¿Culpable??",
+    "intermediary_question": "¿Cuál es la <editorial> de <¿Culpable?>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://novelas-populares.org/novela_1814694064> <http://novelas-populares.org/publicadaPor> ?uri }",
+    "sparql_template_id": "2"
+  },
+  {
+    "_id": "19",
+    "corrected_question": "¿En qué país nació Arthur Conan Doyle?",
+    "intermediary_question": "¿Cuál es el <país de nacimiento> de <Arthur Conan Doyle>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://novelas-populares.org/autor_arthur_conan_doyle> <http://novelas-populares.org/paisDeNacimiento> ?uri }",
+    "sparql_template_id": "2"
+  },
+  {
+    "_id": "24",
+    "corrected_question": "¿Qué novelas publicó la Casa Editorial Seguí?",
+    "intermediary_question": "¿Cuál es la <novela> cuya <editorial> es <Casa Editorial Seguí>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/publicadaPor> <http://novelas-populares.org/editorial_casa_editorial_segui> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "301"
+  },
+  {
+    "_id": "25",
+    "corrected_question": "¿En qué ciudad nació Michel Zévaco?",
+    "intermediary_question": "¿Cuál es el <lugar de nacimiento> de <Michel Zévaco>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://novelas-populares.org/autor_michel_zevaco> <http://novelas-populares.org/lugarDeNacimiento> ?uri }",
+    "sparql_template_id": "2"
+  },
+  {
+    "_id": "27",
+    "corrected_question": "¿En qué ciudad nació Paul Féval?",
+    "intermediary_question": "¿Cuál es el <lugar de nacimiento> de <Paul Féval>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://novelas-populares.org/autor_paul_feval> <http://novelas-populares.org/lugarDeNacimiento> ?uri }",
+    "sparql_template_id": "2"
+  },
+  {
+    "_id": "37",
+    "corrected_question": "¿Qué novelas están publicadas en Barcelona y escritas originalmente en italiano?",
+    "intermediary_question": "¿Cuál es la <novela> cuya <ciudad de publicación> es <Barcelona> y cuyo <idioma original> es <Italiano>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/publicadaEnCiudad> <http://novelas-populares.org/ciudad_barcelona> . ?uri <http://novelas-populares.org/tieneIdiomaOriginal> <http://novelas-populares.org/idioma_italiano> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "308"
+  },
+  {
+    "_id": "47",
+    "corrected_question": "¿Cuál es la ciudad de publicación y la editorial de Los misterios del Mar Indiano?",
+    "intermediary_question": "¿Cuáles son la <ciudad de publicación> y la <editorial> de <Los misterios del Mar Indiano>?",
+    "sparql_query": "SELECT DISTINCT ?ciudad ?editorial WHERE { <http://novelas-populares.org/novela_1859688217> <http://novelas-populares.org/publicadaEnCiudad> ?ciudad . <http://novelas-populares.org/novela_1859688217> <http://novelas-populares.org/publicadaPor> ?editorial }",
+    "sparql_template_id": "9"
+  },
+  {
+    "_id": "48",
+    "corrected_question": "¿Qué autores escribieron novelas originales en catalán (no traducidas)?",
+    "intermediary_question": "¿Cuál es el <autor> de novelas cuyo <idioma del ejemplar> es <Catalán> y cuyo <idioma original> es <Catalán>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://novelas-populares.org/tieneIdiomaEjemplar> <http://novelas-populares.org/idioma_catalan> . ?x <http://novelas-populares.org/tieneIdiomaOriginal> <http://novelas-populares.org/idioma_catalan> . ?x <http://novelas-populares.org/tieneAutor> ?uri . ?uri a <http://novelas-populares.org/Autor> }",
+    "sparql_template_id": "5"
+  },
+  {
+    "_id": "49",
+    "corrected_question": "¿Cuáles son las novelas de autores franceses publicadas en Madrid?",
+    "intermediary_question": "¿Cuál es la <novela> cuya <ciudad de publicación> es <Madrid> y cuyo <autor> nació en <Francia>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/publicadaEnCiudad> <http://novelas-populares.org/ciudad_madrid> . ?uri <http://novelas-populares.org/tieneAutor> ?a . ?a <http://novelas-populares.org/paisDeNacimiento> <http://novelas-populares.org/pais_francia> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "3"
+  },
+  {
+    "_id": "53",
+    "corrected_question": "¿Qué editoriales publicaron novelas de Wilkie Collins?",
+    "intermediary_question": "¿Cuál es la <editorial> de novelas cuyo <autor> es <Wilkie Collins>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://novelas-populares.org/tieneAutor> <http://novelas-populares.org/autor_wilkie_collins> . ?x <http://novelas-populares.org/publicadaPor> ?uri . ?uri a <http://novelas-populares.org/Editorial> }",
+    "sparql_template_id": "6"
+  },
+  {
+    "_id": "62",
+    "corrected_question": "¿Qué ciudades de publicación comparten novelas de Jules Verne y de Michel Zévaco?",
+    "intermediary_question": "¿Cuál es la <ciudad de publicación> de novelas de <Jules Verne> y también de <Michel Zévaco>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://novelas-populares.org/tieneAutor> <http://novelas-populares.org/autor_jules_verne> . ?x <http://novelas-populares.org/publicadaEnCiudad> ?uri . ?y <http://novelas-populares.org/tieneAutor> <http://novelas-populares.org/autor_michel_zevaco> . ?y <http://novelas-populares.org/publicadaEnCiudad> ?uri }",
+    "sparql_template_id": "15"
+  },
+  {
+    "_id": "70",
+    "corrected_question": "¿Qué autores nacidos en Italia escribieron para la Casa Editorial Maucci?",
+    "intermediary_question": "¿Cuál es el <autor> cuyo <país de nacimiento> es <Italia> y que tiene novelas con <editorial> <Casa Editorial Maucci>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/paisDeNacimiento> <http://novelas-populares.org/pais_italia> . ?x <http://novelas-populares.org/tieneAutor> ?uri . ?x <http://novelas-populares.org/publicadaPor> <http://novelas-populares.org/editorial_casa_editorial_maucci> . ?uri a <http://novelas-populares.org/Autor> }",
+    "sparql_template_id": "305"
+  },
+  {
+    "_id": "75",
+    "corrected_question": "¿Qué novelas son traducciones del francés al castellano?",
+    "intermediary_question": "¿Cuál es la <novela> cuyo <idioma original> es <Francés> y cuyo <idioma del ejemplar> es <Castellano>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/tieneIdiomaOriginal> <http://novelas-populares.org/idioma_frances> . ?uri <http://novelas-populares.org/tieneIdiomaEjemplar> <http://novelas-populares.org/idioma_castellano> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "308"
+  },
+  {
+    "_id": "77",
+    "corrected_question": "¿Qué novelas de la Casa Editorial Maucci tienen idioma original italiano?",
+    "intermediary_question": "¿Cuál es la <novela> cuya <editorial> es <Casa Editorial Maucci> y cuyo <idioma original> es <Italiano>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/publicadaPor> <http://novelas-populares.org/editorial_casa_editorial_maucci> . ?uri <http://novelas-populares.org/tieneIdiomaOriginal> <http://novelas-populares.org/idioma_italiano> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "308"
+  },
+  {
+    "_id": "78",
+    "corrected_question": "¿Qué autores nacidos en España cultivaron la dramaturgia?",
+    "intermediary_question": "¿Cuál es el <autor> cuyo <país de nacimiento> es <España> y cuyo <género> es <dramaturgia>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/paisDeNacimiento> <http://novelas-populares.org/pais_espana> . ?uri <http://novelas-populares.org/tieneGenero> <http://novelas-populares.org/genero_dramaturgia> . ?uri a <http://novelas-populares.org/Autor> }",
+    "sparql_template_id": "308"
+  },
+  {
+    "_id": "82",
+    "corrected_question": "¿Qué autores que cultivaron la novela histórica nacieron en España?",
+    "intermediary_question": "¿Cuál es el <autor> cuyo <género> es <novela histórica> y cuyo <país de nacimiento> es <España>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/tieneGenero> <http://novelas-populares.org/genero_novela_historica> . ?uri <http://novelas-populares.org/paisDeNacimiento> <http://novelas-populares.org/pais_espana> . ?uri a <http://novelas-populares.org/Autor> }",
+    "sparql_template_id": "308"
+  },
+  {
+    "_id": "86",
+    "corrected_question": "¿Qué autores cultivaron tanto la novela como el periodismo?",
+    "intermediary_question": "¿Cuál es el <autor> cuyo <género> es <novela> y también <periodismo>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/tieneGenero> <http://novelas-populares.org/genero_novela> . ?uri <http://novelas-populares.org/tieneGenero> <http://novelas-populares.org/genero_periodismo> . ?uri a <http://novelas-populares.org/Autor> }",
+    "sparql_template_id": "7"
+  },
+  {
+    "_id": "89",
+    "corrected_question": "¿Qué novelas comparten tanto autor como editorial con A través del Atlántico en globo?",
+    "intermediary_question": "¿Cuál es la <novela> cuyo <autor> y <editorial> son los mismos que los de <A través del Atlántico en globo>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://novelas-populares.org/novela_1859671837> <http://novelas-populares.org/tieneAutor> ?a . <http://novelas-populares.org/novela_1859671837> <http://novelas-populares.org/publicadaPor> ?e . ?uri <http://novelas-populares.org/tieneAutor> ?a . ?uri <http://novelas-populares.org/publicadaPor> ?e . FILTER(?uri != <http://novelas-populares.org/novela_1859671837>) }",
+    "sparql_template_id": "16"
+  },
+  {
+    "_id": "92",
+    "corrected_question": "¿Qué editoriales publicaron novelas de autores nacidos en España?",
+    "intermediary_question": "¿Cuál es la <editorial> de novelas cuyo <autor> nació en <España>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://novelas-populares.org/tieneAutor> ?a . ?a <http://novelas-populares.org/paisDeNacimiento> <http://novelas-populares.org/pais_espana> . ?x <http://novelas-populares.org/publicadaPor> ?uri . ?uri a <http://novelas-populares.org/Editorial> }",
+    "sparql_template_id": "6"
+  },
+  {
+    "_id": "99",
+    "corrected_question": "¿Qué autores cultivaron la literatura infantil?",
+    "intermediary_question": "¿Cuál es el <autor> cuyo <género> es <literatura infantil>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/tieneGenero> <http://novelas-populares.org/genero_literatura_infantil> . ?uri a <http://novelas-populares.org/Autor> }",
+    "sparql_template_id": "301"
+  },
+  {
+    "_id": "108",
+    "corrected_question": "¿Qué novelas de autores húngaros tiene la colección?",
+    "intermediary_question": "¿Cuál es la <novela> cuyo <autor> nació en <Hungría>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/tieneAutor> ?a . ?a <http://novelas-populares.org/paisDeNacimiento> <http://novelas-populares.org/pais_hungria> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "3"
+  },
+  {
+    "_id": "110",
+    "corrected_question": "¿Qué editoriales publicaron novelas de idioma original polaco?",
+    "intermediary_question": "¿Cuál es la <editorial> de novelas cuyo <idioma original> es <Polaco>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://novelas-populares.org/tieneIdiomaOriginal> <http://novelas-populares.org/idioma_polaco> . ?x <http://novelas-populares.org/publicadaPor> ?uri . ?uri a <http://novelas-populares.org/Editorial> }",
+    "sparql_template_id": "6"
+  },
+  {
+    "_id": "111",
+    "corrected_question": "¿Qué autores nacidos en Gran Bretaña cultivaron la novela gótica?",
+    "intermediary_question": "¿Cuál es el <autor> cuyo <país de nacimiento> es <Gran Bretaña> y cuyo <género> es <novela gótica>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/paisDeNacimiento> <http://novelas-populares.org/pais_gran_bretana> . ?uri <http://novelas-populares.org/tieneGenero> <http://novelas-populares.org/genero_novela_gotica> . ?uri a <http://novelas-populares.org/Autor> }",
+    "sparql_template_id": "308"
+  },
+  {
+    "_id": "118",
+    "corrected_question": "¿Qué autores cultivaron la novela criminal?",
+    "intermediary_question": "¿Cuál es el <autor> cuyo <género> es <novela criminal>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/tieneGenero> <http://novelas-populares.org/genero_novela_criminal> . ?uri a <http://novelas-populares.org/Autor> }",
+    "sparql_template_id": "301"
+  },
+  {
+    "_id": "120",
+    "corrected_question": "¿Qué autores cultivaron el orientalismo?",
+    "intermediary_question": "¿Cuál es el <autor> cuyo <género> es <orientalismo>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/tieneGenero> <http://novelas-populares.org/genero_orientalismo> . ?uri a <http://novelas-populares.org/Autor> }",
+    "sparql_template_id": "301"
+  },
+  {
+    "_id": "125",
+    "corrected_question": "¿Qué autores nacidos en Italia cultivaron la novela?",
+    "intermediary_question": "¿Cuál es el <autor> cuyo <país de nacimiento> es <Italia> y cuyo <género> es <novela>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/paisDeNacimiento> <http://novelas-populares.org/pais_italia> . ?uri <http://novelas-populares.org/tieneGenero> <http://novelas-populares.org/genero_novela> . ?uri a <http://novelas-populares.org/Autor> }",
+    "sparql_template_id": "308"
+  },
+  {
+    "_id": "129",
+    "corrected_question": "¿Qué novelas de autores estadounidenses se publicaron en Barcelona?",
+    "intermediary_question": "¿Cuál es la <novela> cuya <ciudad de publicación> es <Barcelona> y cuyo <autor> nació en <Estados Unidos>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://novelas-populares.org/publicadaEnCiudad> <http://novelas-populares.org/ciudad_barcelona> . ?uri <http://novelas-populares.org/tieneAutor> ?a . ?a <http://novelas-populares.org/paisDeNacimiento> <http://novelas-populares.org/pais_estados_unidos> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "3"
+  },
+  {
+    "_id": "131",
+    "corrected_question": "¿Qué autores de novelas en húngaro cultivaron la dramaturgia?",
+    "intermediary_question": "¿Cuál es el <autor> de novelas cuyo <idioma original> es <Húngaro> y cuyo <género> es <dramaturgia>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://novelas-populares.org/tieneIdiomaOriginal> <http://novelas-populares.org/idioma_hungaro> . ?x <http://novelas-populares.org/tieneAutor> ?uri . ?uri <http://novelas-populares.org/tieneGenero> <http://novelas-populares.org/genero_dramaturgia> }",
+    "sparql_template_id": "3"
+  },
+  {
+    "_id": "132",
+    "corrected_question": "¿Qué editoriales publicaron novelas de autores nacidos en Italia en Barcelona?",
+    "intermediary_question": "¿Cuál es la <editorial> de novelas cuyo <autor> nació en <Italia> y cuya <ciudad de publicación> es <Barcelona>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://novelas-populares.org/tieneAutor> ?a . ?a <http://novelas-populares.org/paisDeNacimiento> <http://novelas-populares.org/pais_italia> . ?x <http://novelas-populares.org/publicadaEnCiudad> <http://novelas-populares.org/ciudad_barcelona> . ?x <http://novelas-populares.org/publicadaPor> ?uri . ?uri a <http://novelas-populares.org/Editorial> }",
+    "sparql_template_id": "6"
+  },
+  {
+    "_id": "141",
+    "corrected_question": "¿Qué géneros tienen los autores que escribieron novelas de la Editorial Calleja en Madrid?",
+    "intermediary_question": "¿Cuál es el <género> del <autor> de novelas cuya <editorial> es <Editorial Calleja> y cuya <ciudad de publicación> es <Madrid>?",
+    "sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://novelas-populares.org/publicadaPor> <http://novelas-populares.org/editorial_editorial_calleja> . ?x <http://novelas-populares.org/publicadaEnCiudad> <http://novelas-populares.org/ciudad_madrid> . ?x <http://novelas-populares.org/tieneAutor> ?a . ?a <http://novelas-populares.org/tieneGenero> ?uri }",
+    "sparql_template_id": "3"
+  },
+  {
+    "_id": "143",
+    "corrected_question": "¿Cuántas novelas publicó la Casa Editorial Maucci?",
+    "intermediary_question": "¿Cuántas <novelas> tienen <editorial> <Casa Editorial Maucci>?",
+    "sparql_query": "SELECT (COUNT(DISTINCT ?uri) AS ?count) WHERE { ?uri <http://novelas-populares.org/publicadaPor> <http://novelas-populares.org/editorial_casa_editorial_maucci> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "401"
+  },
+  {
+    "_id": "149",
+    "corrected_question": "¿Cuántas novelas son traducciones del alemán al castellano?",
+    "intermediary_question": "¿Cuántas <novelas> tienen <idioma original> <Alemán> y <idioma del ejemplar> <Castellano>?",
+    "sparql_query": "SELECT (COUNT(DISTINCT ?uri) AS ?count) WHERE { ?uri <http://novelas-populares.org/tieneIdiomaOriginal> <http://novelas-populares.org/idioma_aleman> . ?uri <http://novelas-populares.org/tieneIdiomaEjemplar> <http://novelas-populares.org/idioma_castellano> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "107"
+  },
+  {
+    "_id": "150",
+    "corrected_question": "¿Cuántas novelas de la colección tienen ejemplar en catalán?",
+    "intermediary_question": "¿Cuántas <novelas> tienen <idioma del ejemplar> <Catalán>?",
+    "sparql_query": "SELECT (COUNT(DISTINCT ?uri) AS ?count) WHERE { ?uri <http://novelas-populares.org/tieneIdiomaEjemplar> <http://novelas-populares.org/idioma_catalan> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "401"
+  },
+  {
+    "_id": "159",
+    "corrected_question": "¿Cuántas editoriales publicaron novelas en Barcelona?",
+    "intermediary_question": "¿Cuántas <editoriales> publicaron novelas con <ciudad de publicación> <Barcelona>?",
+    "sparql_query": "SELECT (COUNT(DISTINCT ?uri) AS ?count) WHERE { ?x <http://novelas-populares.org/publicadaEnCiudad> <http://novelas-populares.org/ciudad_barcelona> . ?x <http://novelas-populares.org/publicadaPor> ?uri . ?uri a <http://novelas-populares.org/Editorial> }",
+    "sparql_template_id": "106"
+  },
+  {
+    "_id": "161",
+    "corrected_question": "¿Cuántas novelas de la Editorial Calleja hay en la colección?",
+    "intermediary_question": "¿Cuántas <novelas> tienen <editorial> <Editorial Calleja>?",
+    "sparql_query": "SELECT (COUNT(DISTINCT ?uri) AS ?count) WHERE { ?uri <http://novelas-populares.org/publicadaPor> <http://novelas-populares.org/editorial_editorial_calleja> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "401"
+  },
+  {
+    "_id": "163",
+    "corrected_question": "¿Cuántas novelas de la colección se publicaron en Madrid?",
+    "intermediary_question": "¿Cuántas <novelas> tienen <ciudad de publicación> <Madrid>?",
+    "sparql_query": "SELECT (COUNT(DISTINCT ?uri) AS ?count) WHERE { ?uri <http://novelas-populares.org/publicadaEnCiudad> <http://novelas-populares.org/ciudad_madrid> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "401"
+  },
+  {
+    "_id": "164",
+    "corrected_question": "¿Cuántos géneros literarios cultivó Jules Verne?",
+    "intermediary_question": "¿Cuántos <géneros> tiene <Jules Verne>?",
+    "sparql_query": "SELECT (COUNT(DISTINCT ?uri) AS ?count) WHERE { <http://novelas-populares.org/autor_jules_verne> <http://novelas-populares.org/tieneGenero> ?uri }",
+    "sparql_template_id": "102"
+  },
+  {
+    "_id": "167",
+    "corrected_question": "¿Cuántas novelas de la colección tienen idioma original italiano?",
+    "intermediary_question": "¿Cuántas <novelas> tienen <idioma original> <Italiano>?",
+    "sparql_query": "SELECT (COUNT(DISTINCT ?uri) AS ?count) WHERE { ?uri <http://novelas-populares.org/tieneIdiomaOriginal> <http://novelas-populares.org/idioma_italiano> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "401"
+  },
+  {
+    "_id": "168",
+    "corrected_question": "¿Cuántas novelas en francés publicó La Novela Ilustrada?",
+    "intermediary_question": "¿Cuántas <novelas> tienen <editorial> <La Novela Ilustrada> y <idioma original> <Francés>?",
+    "sparql_query": "SELECT (COUNT(DISTINCT ?uri) AS ?count) WHERE { ?uri <http://novelas-populares.org/publicadaPor> <http://novelas-populares.org/editorial_la_novela_ilustrada> . ?uri <http://novelas-populares.org/tieneIdiomaOriginal> <http://novelas-populares.org/idioma_ingles> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "108"
+  },
+  {
+    "_id": "184",
+    "corrected_question": "¿Nació Jules Verne en Nantes?",
+    "intermediary_question": "¿Tiene <Jules Verne> <lugar de nacimiento> <Nantes>?",
+    "sparql_query": "ASK WHERE { <http://novelas-populares.org/autor_jules_verne> <http://novelas-populares.org/lugarDeNacimiento> <http://novelas-populares.org/ciudad_nantes> }",
+    "sparql_template_id": "151"
+  },
+  {
+    "_id": "185",
+    "corrected_question": "¿Publicó la Editorial Sopena alguna novela de idioma original inglés?",
+    "intermediary_question": "¿Existe alguna <novela> cuya <editorial> es <Editorial Sopena> y cuyo <idioma original> es <Inglés>?",
+    "sparql_query": "ASK WHERE { ?uri <http://novelas-populares.org/publicadaPor> <http://novelas-populares.org/editorial_editorial_sopena> . ?uri <http://novelas-populares.org/tieneIdiomaOriginal> <http://novelas-populares.org/idioma_ingles> }",
+    "sparql_template_id": "152"
+  },
+  {
+    "_id": "187",
+    "corrected_question": "¿Fundó Ramón Sopena la Editorial Sopena?",
+    "intermediary_question": "¿Tiene <Editorial Sopena> <fundador> <Ramón Sopena>?",
+    "sparql_query": "ASK WHERE { <http://novelas-populares.org/editorial_editorial_sopena> <http://novelas-populares.org/fundadaPor> <http://novelas-populares.org/editor_ramon_sopena> }",
+    "sparql_template_id": "151"
+  },
+  {
+    "_id": "192",
+    "corrected_question": "¿Hay en la colección novelas de autores nacidos en Noruega?",
+    "intermediary_question": "¿Existe alguna <novela> cuyo <autor> tiene <país de nacimiento> <Noruega>?",
+    "sparql_query": "ASK WHERE { ?uri <http://novelas-populares.org/tieneAutor> ?a . ?a <http://novelas-populares.org/paisDeNacimiento> <http://novelas-populares.org/pais_noruega> . ?uri a <http://novelas-populares.org/Novela> }",
+    "sparql_template_id": "152"
+  }
+]
