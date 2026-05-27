@@ -22,8 +22,13 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
 
+
 # Modelo de embeddings para RAG
 EMB_MODEL_ID = "sentence-transformers/all-MiniLM-L6-v2"
+MODEL_ID = EMB_MODEL_ID  # Definición añadida para evitar NameError
+MAX_NEW_TOKENS = 2048
+TEMP = 1e-10
+MAX_INPUT_TOKEN_LENGTH = 6000
 
 st.set_page_config(layout="wide")
 st.title('Interfaz de consultas Novelas Populares')
@@ -45,9 +50,7 @@ def load_conversation_model():
     queries_db = rag.SparQLRAG(EMB_MODEL_ID, 
                                df_train["corrected_question"].to_list(), 
                                df_train["sparql_query"].to_list())
-    
     chat_code_agent = ctx.PromptOpenAI(ontology_db, queries_db)
-
     return chat_code_agent
 
 
@@ -59,9 +62,8 @@ if not client:
 # Load model and prompt formatter
 code_agent = load_conversation_model()
 
-
 def capture_code(text): 
-    code_pattern = r"```(?:sparql)?(.*?)```"
+    code_pattern = r"```(?:sparql)?(.*?)```" 
     code = re.findall(code_pattern, text, re.DOTALL)
     return code[0] if code else "None"
 
@@ -147,8 +149,8 @@ with col1:
 
                 # Generar prompt usando el sistema de Augur
                 conversation = model.conversation_init_dict(
-                    code_agent, 
-                    prompt, 
+                    code_agent,
+                    prompt,
                     few_shot=few_shot,
                     cot=cot,
                     rag=rag_ont
