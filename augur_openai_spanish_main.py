@@ -1,5 +1,5 @@
 """
-Script para usar OpenAI con datos en español (ontología y datos de entrenamiento)
+Script para usar OpenAI con datos en español -ontología y datos de entrenamiento-
 Adaptación de augur_openai_icl_test_main.py para usar train_data.csv y ontology.ttl
 """
 import re
