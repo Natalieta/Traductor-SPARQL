@@ -35,6 +35,9 @@ class RAGBase(ABC):
 
 
 class GraphRAG(RAGBase):
+    """
+    Class intended to manage the vector db for a Knowled Graph
+    """    
     def add_prefixes_to_query(self, sparql_query):
         prefix_map = {
             "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -50,9 +53,7 @@ class GraphRAG(RAGBase):
         }
         prefix_str = "".join([f"PREFIX {k}: <{v}>\n" for k, v in prefix_map.items()])
         return prefix_str + sparql_query
-    """
-    Class intended to manage the vector db for a Knowled Graph
-    """
+
 
     def __init__(self, emb_model_id, endpoint_url=None):
         super().__init__(emb_model_id)
@@ -137,7 +138,12 @@ class GraphRAG(RAGBase):
             }} LIMIT {max_k}
             '''
             sparql = self.add_prefixes_to_query(sparql)
-            res = list(self.graph.query(sparql))
+            print("[DEBUG] Consulta SPARQL enviada al endpoint:\n", sparql)
+            try:
+                res = list(self.graph.query(sparql))
+            except Exception as e:
+                print(f"[ERROR] Fallo al ejecutar la consulta SPARQL: {e}")
+                res = []
             results.append({"uri": uri, "triples": [(str(uri), str(p), str(o)) for p, o in res]})
         return results
     
@@ -159,7 +165,7 @@ class GraphRAG(RAGBase):
 
         full_graph = full_graph.serialize(format='turtle')
 
-        return "@prefix dbr: <http://dbpedia.org/resource/> .\n" + full_graph
+        return "@prefix np: <http://novelas-populares.org/> .\n" + full_graph
 
 
 class SparQLRAG(RAGBase):
@@ -219,3 +225,4 @@ if __name__ == "__main__":
 
     #print(fewshot_db.process_query(query, 5))
     print('done')
+
